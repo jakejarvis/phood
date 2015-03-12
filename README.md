@@ -33,3 +33,9 @@ We will be scraping the list of restaurants according to the user’s geolocatio
 - We need to sort the list of restaurants by both popularity and distance – the most popular restaurants should show up first, but they can’t be too far.
 - Of the photos that are geotagged at a location, need to make sure we are selecting the ones only of food 
 - Sort photos based on which are posted most recently
+- 
+#Comments by Ming
+1. Hilarious title
+2. What you listed in " List of all the features that your team will implement" are not features --features are listed in your " How do you solve the problem?"
+3. Ambitious idea: I would scope down a notch
+5 Overall score: 14/15
