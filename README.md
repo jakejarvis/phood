@@ -38,4 +38,5 @@ We will be scraping the list of restaurants according to the user’s geolocatio
 1. Hilarious title
 2. What you listed in " List of all the features that your team will implement" are not features --features are listed in your " How do you solve the problem?"
 3. Ambitious idea: I would scope down a notch
-5 Overall score: 14/15
+4. Rats, you should have linked the wireframes onto this document
+5 Overall score: 13/15
