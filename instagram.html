@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> PHOOD </title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+/*
+ACCESS-TOKEN = 825654502.22880a8.088578a5f9a34067ad37caf165e0ba03;
+"client_id": "22880a873aca47af9beb3c553c8cf45a" 
+"client_secret": "8fce66a705f548de97a80c0a30d8a8eb"
+"redirect_uri": "http://tuftsdev.github.io/comp20-spring2015-team5/"
+"code": "1f9da55bfc2b4f19bbf0164cb9cbc753"
+
+http://tuftsdev.github.io/comp20-spring2015-team5/#access_token=1825654502.22880a8.088578a5f9a34067ad37caf165e0ba03
+
+
+*/
+// getting pictures from coppa
+//42.343447, -71.068678
+
+function testing() {
+	$("#food").html("");
+$.ajax({
+      type: "GET",
+      dataType: "jsonp",
+      cache: false,
+      
+      url: "https://api.instagram.com/v1/media/search?lat=42.388090&lng=-71.119004&access_token=1825654502.22880a8.088578a5f9a34067ad37caf165e0ba03",
+      success: function(data) {
+        // placing the images on the page  data["data"].length
+        for (var i = 0; i < data["data"].length; i++) {
+        	foodbool = true;
+        	console.log(data.data[i].location);
+        	console.log(data.data[i].tags)
+        	for (var j =0; j< 100; j++){
+        		if((data.data[i].tags[j] == "food") || (data.data[i].tags[j] == "yum") ||
+        			(data.data[i].tags[j] == "eat") || (data.data[i].tags[j] == "foodie") 
+        			|| (data.data[i].tags[j] == "foodporn") || (data.data[i].tags[j] == "nom") 
+        			|| (data.data[i].tags[j] == "foodgasm") || (data.data[i].tags[j] == "foodbaby") 
+        			|| (data.data[i].tags[j] == "cleaneating")) {
+        				foodbool = true;
+        				
+        		}
+        	}
+        	console.log(foodbool);
+        	if((data.data[i].type == "image") && foodbool)
+        	{
+        		$("#food").append("<li><a target='_blank' href='" + data.data[i].link + "'><img src='" + data.data[i].images.low_resolution.url + "'></img></a></li>");
+        	}       
+
+    	}
+      }
+});
+}
+
+$(document).ready(function () {
+			testing();
+        });
+
+</script>
+
+</head>
+<body>
+	<h1> PHOOD! </h1>
+	<ul id="food"> </ul>
+</body>
+
+</html>
