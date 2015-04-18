@@ -19,3 +19,7 @@
     - Use the Yelp API to retrieve latitude and longitudes of nearby businesses
     - Plug those coordinates into the Instagram API to get nearby images
     - Begin designing the frontend using Bootstrap and Google Maps
+    
+#Comments by Ming
+* "We tried storing our Heroku app in our Github API, but we got a "page build failure" because GitHub did not like having a submodule inside our repo" --remove it!
+* "We need to evaluate how to use Bootstrap to create both a desktop and mobile interface" --do you need to use Bootstrap? You don't have to, you know.
