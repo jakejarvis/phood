@@ -5,7 +5,7 @@ Accomplishments:
 - The yelp api has been implemented with consumer key and secret
 - A search function has been implemented that finds all restaurants near the user’s location.
 - Instagram account is authenticated and got an authorization key
-- The Instagram Api is able to search pictures my geolocation and filter them using their tags
+- The Instagram Api is able to search pictures by geolocation using restaurants and longitude. Also, we can filter them using their tags
 - These pictures can be displayed on a webpage
 
 Challenges:
