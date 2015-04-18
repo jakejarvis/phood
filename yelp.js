@@ -1,54 +1,3 @@
-// This goes in html:
-
-var restaurants; 
- 
-var yelp = require("../index").createClient({
-    consumer_key: "JjHX6g8j-dvdM67mxWrcrQ",
-    consumer_secret: "BHffWCP9KemQ-AM8-eydDWHPB5s",
-    token: "tsAY0CK8SH8RDao-7sO8RO0AdbLYsPaJ",
-    token_secret: "loCcp306MHzX38_blAOQmkCVxas"
-});
-
-
-yelp.search({location: myLat+myLng}, function(error, data){
-    console.log(error);
-    console.log(data);
-
-});
- 
-// find restaurant - yelp
-function findRestuarants() {
-    var http = new XMLHttpRequest();
-    var url = "http://api.yelp.com/v2/search?cll=" + myLat + myLng;
-    http.open("GET", url, true);
-    http.set setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.send(params);
-    http.onreadystatechange = function() {
-        if(http.readyState = 4 && http.status == 200) {
-            restaurants = JSON.parse(http.responseText);
-            makeMarkers();
-        }
-    };
-}
-
-
-yelp.search({
-  terms: "Café de la presse",
-  location: "BELGIUM"
-}).then(function (data) {
-  var businesses = data.businesses;
-  var location = data.region;
-  
-  // ...  
-});
- 
- 
-yelp.business("grand-place-bruxelles-2", {
-  cc: "US"
-}).then(function (data) {
-  // ... 
-});
-
 // get location - google
 /* Google maps api for yelp
         Dane Roberts
@@ -69,6 +18,39 @@ yelp.business("grand-place-bruxelles-2", {
     var locations;
     var infoWindow = new google.maps.InfoWindow();
     var message;
+    var restaurants; 
+ 
+    var yelp = require("../index").createClient({
+        consumer_key: "JjHX6g8j-dvdM67mxWrcrQ",
+        consumer_secret: "BHffWCP9KemQ-AM8-eydDWHPB5s",
+        token: "tsAY0CK8SH8RDao-7sO8RO0AdbLYsPaJ",
+        token_secret: "loCcp306MHzX38_blAOQmkCVxas"
+    });
+ 
+// find restaurant - yelp
+function findRestuarants() {
+
+    yelp.search({location: myLat+myLng}, function(error, data){
+        console.log(error);
+        console.log(data);
+        restaurants = data;
+
+    });
+
+/*
+    var http = new XMLHttpRequest();
+    var url = "http://api.yelp.com/v2/search?cll=" + myLat + myLng;
+    http.open("GET", url, true);
+    http.set setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(params);
+    http.onreadystatechange = function() {
+        if(http.readyState = 4 && http.status == 200) {
+            restaurants = JSON.parse(http.responseText);
+            makeMarkers();
+        }
+    };*/
+}
+
 
 function init()
 {
@@ -95,14 +77,13 @@ function renderMap()
 {
     me = new google.maps.LatLng(myLat, myLng);
     map.panTo(me);
-    var myImage = "tiger.png";
+    var myImage = // insert image name here
     myMarker = new google.maps.Marker({
         position: me,
         icon: myImage,
-        title: "PatHawthorn"
+        title: "I AM HERE"
     });
     google.maps.event.addListener(myMarker, 'click', function() {
-        infoWindow.setContent("PatHawthorn");
         infoWindow.open(map, myMarker);
     });
     myMarker.setMap(map);
