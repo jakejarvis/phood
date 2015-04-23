@@ -1,10 +1,11 @@
 {
-    "name": "phood",
-    "version": "0.0.1",
-    "dependencies": {
-        "express": "latest",
-        "mongodb": "latest",
-        "body-parser": "latest",
-        "validator":"latest"
-    }
+  "name": "phood",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "mongodb": "latest",
+    "validator": "latest",
+    "yelp": "^0.2.0"
+  }
 }
