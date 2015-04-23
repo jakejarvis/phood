@@ -1,0 +1,31 @@
+body {
+    font-family: "PT Sans", sans-serif;
+    font-size: 15px;
+}
+
+nav.navbar {
+    height: 70px;
+    background-color: #2D7C76;
+}
+
+div.navbar-header, a.navbar-brand {
+    width: 100%;
+}
+
+a.navbar-brand img {
+    height: 40px;
+    margin: 0px auto;
+}
+
+div#map_canvas {
+  width: 100%;
+  height: 500px;
+}
+
+div#container-main {
+    margin-top: 70px;
+}
+
+.container-fluid {
+    padding: 0;
+}
