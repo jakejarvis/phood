@@ -22,3 +22,9 @@
 	- Look into being able to change the map so that you can find restaurant photos near a location that is not where you currently are
 	- Implement the text message alerts
 	- Integrate the Foursquare API into the Instagram API
+
+#Comments by Ming
+1. "Investigate the foodspotting Api to see if that will yield better photos for our purposes" (from Status Report 2) --are you still using it?
+2. "We learned that we additionally need to implement the Foursquare API – plugging coordinates into Instagram wasn't giving us the restaurant photos we expected." --that's baffling that you NEED to use Foursquare API.  What's wrong with plugging in coordinates into IG?  What if you don't use Foursquare? I am wondering what's wrong...
+3. "We realized we may no longer need the Yelp API" --why not?  I've heard "interesting" things about it.
+4. "Implement the text message alerts" --twillio?
