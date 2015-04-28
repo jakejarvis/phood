@@ -53,10 +53,48 @@ exports.webhook = function(request, response) {
                     return respond('We could not subscribe you :c - please try '
                         +'again.');
                 }
+
+                // subscription is updated!
+                var responseMessage = 'You are now subscribed for updates.';
+
+                if (!subscriber.subscribed) {
+                    responseMessage = 'We\'re sad to see you go. If you want to'
+                    + ' receive updates in the future, text "subscribe"!';
+                }
+
+                respond(responseMessage);
             });
+        } else {
+            // command not recognized
+            var responseMessage = 'Sorry we didn\'t understand that.' +
+            'Available comands are: subscribe or unsubscribe';
+            respond(responseMessage);
         }
     }
 
+    function respond(message) {
+        response.type('text/xml');
+        response.render('twiml', {
+            message: message
+        });
+    }
 
 }
 
+// Handle form submission
+exports.sendMessages = function(request, response) {
+    // Get message info from form submission
+    var message = request.body.message;
+    var imageUrl = request.body.imageUrl;
+
+    // Use model function to send messages to all subscribers
+    Subscriber.sendMessage(message, imageUrl, function(err) {
+        if (err) {
+            request.flash('errors', err.message);
+        } else {
+            request.flash('successes', 'Messages on their way!');
+        }
+
+        response.redirect('/');
+    });
+};
