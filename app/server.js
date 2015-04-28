@@ -26,4 +26,9 @@ app.get('/', function(req, res) {
     res.render('pages/index');
 });
 
+// restaurant page 
+app.get('/restaurant', function(req, res) {
+    res.render('pages/restaurant', {name: "Chipotle"});
+});
+
 app.listen(process.env.PORT || 3000);
