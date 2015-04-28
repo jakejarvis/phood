@@ -9,6 +9,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
+var path = require('path');
+app.set('views', path.join(__dirname, 'views/'));
+
 // Mongo initialization and connect to database
 var mongoUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/phood';
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
@@ -18,7 +21,7 @@ var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
 
 // homepage 
 app.get('/', function(req, res) {
-    res.render('views/pages/index.html');
+    res.render('pages/index');
 });
 
 app.listen(process.env.PORT || 3000);
