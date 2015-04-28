@@ -1,17 +1,16 @@
-// Download the Node helper library from twilio.com/docs/node/install
-// These vars are your accountSid and authToken from twilio.com/user/account
+module.exports = {
+	var accountSid = 'AC030beb99079233764567be1d99b5e372';
+	var authToken = "5d08bb7f44240cabd1b96a73f6f30f1b";
+	var client = require('twilio')(accountSid, authToken);
+	 
 
-var accountSid = 'AC030beb99079233764567be1d99b5e372';
-var authToken = "5d08bb7f44240cabd1b96a73f6f30f1b";
-var client = require('twilio')(accountSid, authToken);
- 
-
-// message will have the restaurant's name, a photo of from the restaurant, and a link to its page
-client.sms.messages.create({
-    body: "Jenny please?! Gimme another chance! I CAN DO BETTER",
-    MediaUrl: "http://gph.is/YCpEbw",
-    to: "+15026459166",
-    from: "+12817466310"
-}, function(err, sms) {
-    process.stdout.write(sms.sid);
-});
+	// message will have the restaurant's name, a photo of from the restaurant, and a link to its page
+	client.sms.messages.create({
+	    body: "Jenny please?! Gimme another chance! I CAN DO BETTER",
+	    MediaUrl: "http://gph.is/YCpEbw",
+	    to: "+15026459166",
+	    from: "+12817466310"
+	}, function(err, sms) {
+	    process.stdout.write(sms.sid);
+	});
+};
