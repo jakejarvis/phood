@@ -28,7 +28,9 @@ app.get('/', function(req, res) {
 
 // restaurant page 
 app.get('/restaurant', function(req, res) {
-    res.render('pages/restaurant', {name: "Chipotle"});
+    var id = req.param('id'); // get id parameter from url (/restaurant?id=xxxxxxx)
+
+    res.render('pages/restaurant', {name: "Chipotle", id: id});
 });
 
 app.listen(process.env.PORT || 3000);
