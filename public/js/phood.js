@@ -69,12 +69,8 @@ function createMarker(place) {
     });
 
 }
-
-
-
      // console.log(data.response.venues[0].name);
       //id = data.response.venues[0].id;
 
      // console.log(id);
 
-}
