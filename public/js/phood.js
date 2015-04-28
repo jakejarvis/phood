@@ -41,12 +41,13 @@ function renderMap() {
             info.open(gmap, this);
         }
     );
+    foursquare();
 }
 
 function foursquare(){
-
-    $.getJSON('https://api.foursquare.com/v2/venues/search?ll='+mylat+','+mylng+'&section=food&client_id=AHETXZDGE5YWYLLM5AR13UTWC3UXETSPE54UHAOVRNPJLXIT&client_secret=SCLHL3DIHUSWIBWALLQE3TDHMEZUPCPVRV55FEN0WJRBJPU2&v=20150426', {}, function(data) {
+    $.getJSON('https://api.foursquare.com/v2/venues/search?ll='+myLat+','+myLng+'&categoryId=4d4b7105d754a06374d81259&radius=800&client_id=AHETXZDGE5YWYLLM5AR13UTWC3UXETSPE54UHAOVRNPJLXIT&client_secret=SCLHL3DIHUSWIBWALLQE3TDHMEZUPCPVRV55FEN0WJRBJPU2&v=20150426', {}, function(data) {
         for(var i=0; i < data.response.venues.length; i++) {
+            console.log(data.response.venues[i].name);
             createMarker(data.response.venues[i]);
         }
     });
