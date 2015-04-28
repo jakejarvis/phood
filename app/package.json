@@ -6,6 +6,7 @@
     "express": "latest",
     "mongodb": "latest",
     "validator": "latest",
-    "yelp": "^0.2.0"
+    "yelp": "^0.2.0",
+    "ejs": "^1.0.0"
   }
 }
