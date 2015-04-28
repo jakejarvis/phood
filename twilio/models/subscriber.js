@@ -2,7 +2,7 @@
 // subscriber.js
 
 var twilio = require('twilio');
-var config = require('../config');
+var config = require('../config'); // do i create a JSON file with the account SID and authentication token?
 
 // create an authenticated Twilio REST API client
 var client = twilio(config.accountSid, config.authToken);
