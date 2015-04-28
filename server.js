@@ -3,6 +3,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var validator = require('validator');
 var path = require('path');
+var fs = require('fs');
+var vm = require('vm');
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,16 +23,22 @@ var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
     db = databaseConnection;
 });
 
-// homepage 
-app.get('/', function(req, res) {
-    res.render('pages/index');
-});
 
-// restaurant page 
-app.get('/restaurant', function(req, res) {
-    var id = req.param('id'); // get id parameter from url (/restaurant?id=xxxxxxx)
 
-    res.render('pages/restaurant', {name: "Chipotle", id: id});
-});
+// WE HAVE SPLIT UP THE REST OF THE FILE INTO OUR OWN DIFFERENT THAT WE require
+
+// homepage module
+var home = require('./home');
+home.execute(app);
+
+// restaurant module
+var restaurant = require('./restaurant');
+restaurant.execute(app);
+
+// text message module
+var twilio = require('./twilio');
+twilio.execute(app);
+
+
 
 app.listen(process.env.PORT || 3000);
