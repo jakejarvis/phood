@@ -18,6 +18,9 @@ function init() {
             navigator.geolocation.getCurrentPosition(function(position) {
                 myLat = position.coords.latitude;
                 myLng = position.coords.longitude;
+
+                gmap.setCenter(new google.maps.LatLng(myLat, myLng));
+
                 renderMap();
             });
         } else {
@@ -35,7 +38,10 @@ function renderMap() {
     marker = new google.maps.Marker({
         position: me,
         title: "This is me, ",
-        icon: "img/bunny.png"
+        icon: {
+            url: "img/bunny.png",
+            size: new google.maps.Size(81, 133)
+        }
     });
     marker.setMap(gmap);
 
@@ -65,10 +71,13 @@ function createMarker(place) {
 
     var latlng = new google.maps.LatLng(lat, lng);
     var marker = new google.maps.Marker({
-                    position: latlng,
-                    map: gmap,
-                    title: place.name,
-                    icon: "img/carrot.png"
+        position: latlng,
+        map: gmap,
+        title: place.name,
+        icon: {
+            url: "img/carrot.png",
+            size: new google.maps.Size(24, 60)
+        }
     });
 
     google.maps.event.addListener(marker, 'click', function() {
