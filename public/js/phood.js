@@ -37,10 +37,12 @@ function renderMap() {
 
     marker = new google.maps.Marker({
         position: me,
-        title: "This is me, ",
+        title: "You are here.",
         icon: {
             url: "img/bunny.png",
-            size: new google.maps.Size(81, 133)
+            size: new google.maps.Size(81, 133),
+            origin: new google.maps.Point(0, 0),
+            scaledSize: new google.maps.Size(40, 60)
         }
     });
     marker.setMap(gmap);
@@ -76,7 +78,9 @@ function createMarker(place) {
         title: place.name,
         icon: {
             url: "img/carrot.png",
-            size: new google.maps.Size(24, 60)
+            size: new google.maps.Size(24, 60),
+            origin: new google.maps.Point(0, 0),
+            scaledSize: new google.maps.Size(18, 45)
         }
     });
 
