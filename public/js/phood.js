@@ -31,7 +31,7 @@ function renderMap() {
     marker = new google.maps.Marker({
         position: me,
         title: "This is me, ",
-        icon: "img/phood_bunny.png"
+        icon: "img/bunny.png"
     });
     marker.setMap(gmap);
 
@@ -63,7 +63,8 @@ function createMarker(place) {
     var marker = new google.maps.Marker({
                     position: latlng,
                     map: gmap,
-                    title: place.name
+                    title: place.name,
+                    icon: "img/carrot.png"
     });
 
     google.maps.event.addListener(marker, 'click', function() {
