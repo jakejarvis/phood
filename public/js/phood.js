@@ -47,7 +47,7 @@ function renderMap() {
     });
     marker.setMap(gmap);
 
-    google.maps.event.addListener(marker, 'click',
+    google.maps.event.addListener(marker, 'mouseover',
         function() {
             info.close();
             info.setContent(this.title);
@@ -84,10 +84,16 @@ function createMarker(place) {
         }
     });
 
-    google.maps.event.addListener(marker, 'click', function() {
+    // open pop-up info window (with link to restaurant info) when mouse is over this marker
+    google.maps.event.addListener(marker, 'mouseover', function() {
         infoWindow.close();
         infoWindow.setContent('<a href="restaurant?id=' + place.id + '&name='+ place.name + '">' + place.name + '</a>');
         infoWindow.open(gmap, this);
+    });
+
+    // close pop-up window when mouse moves away from restaurant
+    google.maps.event.addListener(marker, 'mouseout', function() {
+        infoWindow.close();
     });
 
 }
