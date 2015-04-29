@@ -8,18 +8,18 @@ function init() {
     // only do this if we're displaying a map (#map_canvas) on the page
     if($('#map_canvas').length) {
         var map_canvas = document.getElementById("map_canvas");
-        var tufts = new google.maps.LatLng(42.406484, -71.119023);
+        var tufts = new google.maps.LatLng(42.406484, -71.119023);  // default center of map is tufts (our best guess)
         var options = {zoom: 15, center: tufts};
 
         gmap = new google.maps.Map(map_canvas, options);
-
 
         if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
             navigator.geolocation.getCurrentPosition(function(position) {
                 myLat = position.coords.latitude;
                 myLng = position.coords.longitude;
 
-                gmap.setCenter(new google.maps.LatLng(myLat, myLng));
+                // 
+                //gmap.setCenter(new google.maps.LatLng(myLat, myLng));
 
                 renderMap();
             });
@@ -33,11 +33,12 @@ function init() {
 
 function renderMap() {
     me = new google.maps.LatLng(myLat, myLng);
+
+    // re-center map once we get the user's location
     gmap.panTo(me);
 
     marker = new google.maps.Marker({
         position: me,
-        title: "You are here.",
         icon: {
             url: "img/bunny.png",
             size: new google.maps.Size(81, 133),
@@ -47,13 +48,6 @@ function renderMap() {
     });
     marker.setMap(gmap);
 
-    google.maps.event.addListener(marker, 'mouseover',
-        function() {
-            info.close();
-            info.setContent(this.title);
-            info.open(gmap, this);
-        }
-    );
     foursquare();
 }
 
@@ -84,11 +78,18 @@ function createMarker(place) {
         }
     });
 
+    var url = "restaurant?id=" + place.id + "&name=" + place.name;
+
     // open pop-up info window (with link to restaurant info) when mouse is over this marker
     google.maps.event.addListener(marker, 'mouseover', function() {
         infoWindow.close();
-        infoWindow.setContent('<a href="restaurant?id=' + place.id + '&name='+ place.name + '">' + place.name + '</a>');
+        infoWindow.setContent('<a href="' + url + '">' + place.name + '</a>');
         infoWindow.open(gmap, this);
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        console.log("asdfasdf");
+        window.location.href = url;
     });
 
     // close pop-up window when mouse moves away from restaurant
