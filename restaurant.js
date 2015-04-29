@@ -2,13 +2,16 @@ module.exports = {
     execute: function(app) {
         // restaurant page 
         app.get('/restaurant', function(req, res) {
-            id = req.param('id'); // get id parameter from url (/restaurant?id=xxxxxxx)
-            var restaurant_name = req.param('name');
-            res.render('pages/restaurant', {
-                name: restaurant_name,
-                id: id
-            });
-        });
+            id = req.query.id; // get id parameter from url (/restaurant?id=xxxxxxx)
+            name = req.query.name;
+  			// get restuarant name from foursquare
+		    /*
+		    $.getJSON('https://api.foursquare.com/v2/venues/' + id + '?client_id=AHETXZDGE5YWYLLM5AR13UTWC3UXETSPE54UHAOVRNPJLXIT&client_secret=SCLHL3DIHUSWIBWALLQE3TDHMEZUPCPVRV55FEN0WJRBJPU2&v=20150426', {}, function(data) {
+		            name = data.response.venue.name;
+		            console.log(name);
+		    });
+*/
+/*
         $.ajax({
             type: "GET",
             dataType: "jsonp",
@@ -24,12 +27,24 @@ module.exports = {
                     success: function(data) {
                         for (var i = 0; i < data["data"].length; i++) {
                             if (data.data[i].type == "image") {
-                                $("#food").append("<li><a target='_blank' href='" + data.data[i].link + "'><img src='" + data.data[i].images.low_resolution.url + "'></img></a></li>");
+                                $("#food").append("<a target='_blank' href='" + data.data[i].link + "'><img src='" + data.data[i].images.low_resolution.url + "'></img></a>");
                             }
                         }
                     }
                 });
             }
         });
+
+
+*/
+
+
+
+            res.render('pages/restaurant', {
+                name: name,
+                id: id
+            });
+        });
+
     }
 }

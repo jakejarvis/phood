@@ -1,7 +1,7 @@
 var myLat;
 var myLng;
 var infoWindow = new google.maps.InfoWindow;
-
+var info = new google.maps.InfoWindow;
 
 function init() {
 
@@ -69,7 +69,7 @@ function createMarker(place) {
 
     google.maps.event.addListener(marker, 'click', function() {
         infoWindow.close();
-        infoWindow.setContent('<a href="restaurant?id=' + place.id + '">' + place.name + '</a>');
+        infoWindow.setContent('<a href="restaurant?id=' + place.id + '&name='+ place.name + '">' + place.name + '</a>');
         infoWindow.open(gmap, this);
     });
 
