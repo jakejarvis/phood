@@ -31,7 +31,7 @@ function renderMap() {
     marker = new google.maps.Marker({
         position: me,
         title: "This is me, ",
-        icon: "img/carrot.png"
+        icon: "img/phood_bunny.png"
     });
     marker.setMap(gmap);
 
