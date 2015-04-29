@@ -25,7 +25,7 @@ var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
 
 
 
-// WE HAVE SPLIT UP THE REST OF THE FILE INTO OUR OWN DIFFERENT THAT WE require
+// WE HAVE SPLIT UP THE REST OF THE FILE INTO OUR OWN MODULES THAT WE require() AND THEN CALL THEIR execute() FUNCTION
 
 // homepage module
 var home = require('./home');
