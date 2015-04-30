@@ -8,18 +8,26 @@
     <h2>Address: <%= address %></h2>
 
 
-    <form action="sendSMS" method="post" target="_blank">
+    <form action="sendSMS" method="post">
         <input type="text"
-            placeholder="Enter your phone number (ex: 1234567890)"
-            pattern=".{10,10}" required
+            placeholder="Enter  phone number (ex: 1234567890)"
+            pattern=".{10,10}"
+            required
             size=35
             name="phonenumber"/>
         <input type="hidden" name="name" value="<%= name %>"/>
         <input type="hidden" name="address" value="<%= address %>"/>
-        <input type="submit" value="Text me this address!"/>
+        <input type="submit" value="Text me this address!" onclick="send_SMS();"/>
     </form>
 
     <div class="row">
+
+    <script type="text/javascript">
+        function send_SMS(number) {
+            alert("A message is on its way!");
+            return true;
+    }
+</script>
 
 <% for(var i = 0; i < images.length; i++) { %>
 

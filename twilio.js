@@ -26,9 +26,8 @@ module.exports = {
 			}, function(err, sms) {
 			    	process.stdout.write(sms.sid);
 			});
-			res.status(200);
-	    	res.send("A message is on its way to "+ phonenumber+"!");
-
+			res.status(205);
+			res.send();
 		})
 	}
 };
