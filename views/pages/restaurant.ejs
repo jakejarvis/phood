@@ -8,11 +8,15 @@
     <h2>Address: <%= address %></h2>
 
 
-    <form action="sendSMS" method="post">
-        <input type="text" name="phonenumber"/>
+    <form action="sendSMS" method="post" target="_blank">
+        <input type="text"
+            placeholder="Enter your phone number (ex: 1234567890)"
+            pattern=".{10,10}" required
+            size=35
+            name="phonenumber"/>
         <input type="hidden" name="name" value="<%= name %>"/>
         <input type="hidden" name="address" value="<%= address %>"/>
-        <input type="submit" value="Send!"/>
+        <input type="submit" value="Text me this address!"/>
     </form>
 
     <div class="row">
