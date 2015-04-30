@@ -30,6 +30,27 @@ div#container-main {
     margin-top: 70px;
 }
 
+div#container-restaurant {
+    margin-top: 70px;
+    padding: 20px 40px;
+}
+
+div#container-restaurant h1 {
+    margin: 0px;
+}
+
+div#restaurantinfo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div#textform {
+        display:table-cell;
+    vertical-align:middle;
+    text-align: right;
+}
+
+
 .container-fluid {
     padding: 0;
 }
