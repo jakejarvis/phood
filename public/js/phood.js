@@ -81,14 +81,16 @@ function createMarker(place) {
         infoWindow.setContent('<a href="' + url + '">' + place.name + '</a>');
         infoWindow.open(gmap, this);
     });
-
+/*
     google.maps.event.addListener(marker, 'click', function() {
         console.log("asdfasdf");
         window.location.href = url;
     });
-
+*/
     // close pop-up window when mouse moves away from restaurant
+/*
     google.maps.event.addListener(marker, 'mouseout', function() {
         infoWindow.close();
     });
+*/
 }
