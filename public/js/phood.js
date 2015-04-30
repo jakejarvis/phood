@@ -40,7 +40,7 @@ function renderMap() {
         position: me,
         icon: {
             url: "img/bunny.png",
-            size: new google.maps.Size(81, 133),
+            size: new google.maps.Size(40, 60),
             origin: new google.maps.Point(0, 0),
             scaledSize: new google.maps.Size(40, 60)
         }
