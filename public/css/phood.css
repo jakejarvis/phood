@@ -64,3 +64,18 @@ div#textform {
     vertical-align:middle;
     text-align: right;
 }
+
+.unfavorited, .unfavorited a {
+    color: #8B642A;
+}
+
+.favorited, .favorited a {
+    color: #FFC061;
+}
+
+.glyphicon.glyphicon-star-empty {
+    font-size: 30px;
+}
+.glyphicon.glyphicon-star {
+    font-size: 30px;
+}
