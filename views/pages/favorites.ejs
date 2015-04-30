@@ -7,14 +7,14 @@
 			$("#favoriteList").prepend('<p><img src=favorites_carrot.png><a href="' + data.link + '">' + data.name + '</a></p>');
 		}
 		if ($('#favoriteList').is(':empty')) {
-			$("#favoriteList").prepend('<p> Go find some carrots! </p>');
+			$("#favoriteList").prepend('<p> <a href="/">Go find some carrots!</a> </p>');
 		}
 	});
 
 	function clearFavorites() {
 		$("#favoriteList").empty();
 		localStorage.clear();
-		$("#favoriteList").prepend('<p> Go find some carrots! </p>');
+		$("#favoriteList").prepend('<p> <a href="/">Go find some carrots!</a> </p>');
 
 	}
 
