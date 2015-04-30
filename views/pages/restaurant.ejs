@@ -5,14 +5,14 @@
     
     <div class="row" id="restaurantinfo">
         <div class="col-md-6">
-            <h1><%= name %></h1>
+            <h1><a href="<%= url %>" target="_blank"><%= name %></a></h1>
             <h4><a href="http://maps.google.com/?q=<%= address.replace(/\n/g, " ") %>" target="_blank"><%= address.replace(/\n/g, "<br>") %></a></h4>
         </div>
 
         <div class="col-md-6" id="textform">
             <form action="sendSMS" method="post" class="form-inline">
                 <input type="text"
-                    placeholder="Enter your phone number"
+                    placeholder="Enter your phone number."
                     required
                     size="35"
                     name="phonenumber"

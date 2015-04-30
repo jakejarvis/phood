@@ -78,8 +78,10 @@ module.exports = {
 
                                         address = "";
 
+                                        console.log(foursquareData.response.venue.bestPhoto.prefix + foursquareData.response.venue.bestPhoto.suffix);
 
                                         name = foursquareData.response.venue.name;
+                                        url = foursquareData.response.venue.url;
 
                                         for(var i = 0; i < foursquareData.response.venue.location.formattedAddress.length; i++) {
                                             address += foursquareData.response.venue.location.formattedAddress[i] + "\n";
@@ -89,6 +91,7 @@ module.exports = {
                                             name: name,
                                             id: id,
                                             address: address,
+                                            url: url,
                                             images: images
                                         });
                                         
