@@ -21,8 +21,13 @@ module.exports = {
 			    to: phonenumber,
 			    from: "+12817466310"
 			}, function(err, sms) {
-			    process.stdout.write(sms.sid);
+			    	process.stdout.write(sms.sid);
 			});
+
+			console.log("response");
+			res.status(204);
+	    	res.send();
+
 		})
 	}
 };
