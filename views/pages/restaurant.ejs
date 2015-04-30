@@ -11,9 +11,26 @@
                     <%= addressArray[i] %><br>
                 <% } %>
             </a></h4>
-            <button type="button" class="btn btn-default btn-lg" onclick="addToFavorites()">
+            <button type="button" class="btn btn-default btn-lg" onclick='addToFavorites("<%= name %>")'>
                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
             </button>
+
+            <script type="text/javascript">
+                function addToFavorites(name) {
+                    // change button style to selected
+
+                    // add restaurant to local storage
+                    key = name;
+                    to_store = {
+                        'name' : name,
+                        'link' : window.location.href
+                    };
+                    localStorage[key] = JSON.stringify(to_store);
+                }
+                </script>
+
+
+
         </div>
 
         <div class="col-md-6" id="textform">
