@@ -5,7 +5,15 @@
     
     <h1><%= name %></h1>
     <h2>ID: <%= id %></h2>
+    <h2>Address: <%= address %></h2>
 
+
+    <form action="sendSMS" method="post">
+        <input type="text" name="phonenumber"/>
+        <input type="hidden" name="name" value="<%= name %>"/>
+        <input type="hidden" name="address" value="<%= address %>"/>
+        <input type="submit" value="Send!"/>
+    </form>
 
     <div class="row">
 

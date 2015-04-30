@@ -48,7 +48,7 @@ function renderMap() {
 }
 
 function foursquare() {
-    $.getJSON('https://api.foursquare.com/v2/venues/search?ll=' + myLat + ',' + myLng + '&categoryId=4d4b7105d754a06374d81259&radius=800&client_id=AHETXZDGE5YWYLLM5AR13UTWC3UXETSPE54UHAOVRNPJLXIT&client_secret=SCLHL3DIHUSWIBWALLQE3TDHMEZUPCPVRV55FEN0WJRBJPU2&v=20150426', {}, function(data) {
+    $.getJSON('https://api.foursquare.com/v2/venues/search?ll=' + myLat + ',' + myLng + '&categoryId=4d4b7105d754a06374d81259&radius=2000&limit=50&client_id=AHETXZDGE5YWYLLM5AR13UTWC3UXETSPE54UHAOVRNPJLXIT&client_secret=SCLHL3DIHUSWIBWALLQE3TDHMEZUPCPVRV55FEN0WJRBJPU2&v=20150426', {}, function(data) {
         for(var i = 0; i < data.response.venues.length; i++) {
             console.log(data.response.venues[i].name);
             createMarker(data.response.venues[i]);
@@ -73,7 +73,7 @@ function createMarker(place) {
         }
     });
 
-    var url = "restaurant?id=" + place.id + "&name=" + place.name;
+    var url = "restaurant?id=" + place.id;
 
     // open pop-up info window (with link to restaurant info) when mouse is over this marker
     google.maps.event.addListener(marker, 'mouseover', function() {
