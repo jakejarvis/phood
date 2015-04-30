@@ -7,6 +7,10 @@ body {
     font-size: 15px;
 }
 
+a {
+    color: #2D7C76;
+}
+
 nav.navbar {
     height: 70px;
     background-color: #2D7C76;
