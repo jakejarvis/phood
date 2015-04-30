@@ -11,6 +11,9 @@ module.exports = {
 			var name = req.body.name;
 			var address = req.body.address;
 
+			if(phonenumber == undefined) {
+
+			}
 
 			var text = name + " is at " + address;
 
@@ -23,8 +26,6 @@ module.exports = {
 			}, function(err, sms) {
 			    	process.stdout.write(sms.sid);
 			});
-
-			console.log("response");
 			res.status(204);
 	    	res.send();
 
