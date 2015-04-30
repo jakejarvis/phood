@@ -24,11 +24,15 @@ module.exports = {
 			    to: phonenumber,
 			    from: "+12817466310"
 			}, function(err, sms) {
-
+				if(err) {
+					console.log("SOMETHING WENT WRONG :(");
+				} else {
+					res.status(205);
+					res.send();
+				}
 			});
 			
-			res.status(205);
-			res.send();
+			
 		})
 	}
 };
