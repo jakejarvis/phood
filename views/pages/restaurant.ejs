@@ -11,6 +11,9 @@
                     <%= addressArray[i] %><br>
                 <% } %>
             </a></h4>
+            <button type="button" class="btn btn-default btn-lg" onclick="addToFavorites()">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            </button>
         </div>
 
         <div class="col-md-6" id="textform">
@@ -27,9 +30,7 @@
                 <input type="submit" value="Text me this address!" onclick="send_SMS();" class="btn btn-success">
             </form>
         </div>
-        <button type="button" class="btn btn-default btn-lg" onclick="addToFavorites()">
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
+
     </div>
 
     <div class="row">
