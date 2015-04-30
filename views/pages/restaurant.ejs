@@ -6,70 +6,23 @@
     <h1><%= name %></h1>
     <h2>ID: <%= id %></h2>
 
+
     <div class="row">
+
+<% for(var i = 0; i < images.length; i++) { %>
+
         <div class="col-xs-3">
             <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
+                 <img src="<%= images[i] %>" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-                 <img src="http://placehold.it/350x350" class="img-responsive">
-            </a>
-        </div>
+
+
+<% } %>
+
+
 
     </div>
-
 </div>
 
 <% include ../templates/footer %>

@@ -3,6 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var validator = require('validator');
 var path = require('path');
+var http = require('https');
 var fs = require('fs');
 var vm = require('vm');
 var app = express();
@@ -33,7 +34,7 @@ home.execute(app);
 
 // restaurant module
 var restaurant = require('./restaurant');
-restaurant.execute(app);
+restaurant.execute(app, http);
 
 // text message module
 var twilio = require('./twilio');
