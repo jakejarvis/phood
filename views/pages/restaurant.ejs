@@ -11,21 +11,30 @@
                     <%= addressArray[i] %><br>
                 <% } %>
             </a></h4>
-            <button type="button" class="btn btn-default btn-lg" onclick='addToFavorites("<%= name %>")'>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <button type="button" class="btn btn-default" id='favoriteStar' onclick='toggleFavorites("<%= name %>")'>
+                <span class="glyphicon glyphicon-star-empty"  aria-hidden="true"></span>
             </button>
 
             <script type="text/javascript">
-                function addToFavorites(name) {
-                    // change button style to selected
-
-                    // add restaurant to local storage
+                function toggleFavorites(name) {
                     key = name;
-                    to_store = {
-                        'name' : name,
-                        'link' : window.location.href
-                    };
-                    localStorage[key] = JSON.stringify(to_store);
+                    // check if in local storage
+                    if (localStorage.getItem(name) === null) {
+                        // not in local storage, so add
+                        to_store = {
+                            'name' : name,
+                            'link' : window.location.href
+                        };
+                        localStorage[key] = JSON.stringify(to_store);
+                        $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
+
+                        // toggle the star
+                        return;
+                    }
+                    // is in local storage, so remove
+                    localStorage.removeItem(key);
+                    $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
+
                 }
                 </script>
 
