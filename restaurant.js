@@ -29,7 +29,7 @@ module.exports = {
 
                         var instaOptions = {
                             host: 'api.instagram.com',
-                            path: '/v1/locations/' + id + '/media/recent?access_token=1825654502.22880a8.088578a5f9a34067ad37caf165e0ba03'
+                            path: '/v1/locations/' + id + '/media/recent?access_token=1825654502.22880a8.088578a5f9a34067ad37caf165e0ba03&count=500'
                         };
 
                         instaCallback = function(response) {
