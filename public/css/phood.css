@@ -79,3 +79,8 @@ div#textform {
 .glyphicon.glyphicon-star {
     font-size: 30px;
 }
+
+#clearFavoritesButton {
+    color: white;
+    background-color: #ef8125;
+}
