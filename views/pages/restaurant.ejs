@@ -5,12 +5,12 @@
     
     <div class="row" id="restaurantinfo">
         <div class="col-md-6">
-            <span> <h1><a href="<%= url %>" target="_blank"><%= name %></a>
+            <h1><a href="<%= url %>" target="_blank"><%= name %></a>
                 <button type="button" class="btn btn-link" id='favoriteStar' onclick='toggleFavorites("<%= name %>")'>
                     <span class="glyphicon glyphicon-star-empty unfavorited"  aria-hidden="true"></span>
                     </button>
             </h1> 
-            <h4><a href="http://maps.google.com/?q=<%= addressString.replace(/\n/g, " ") %>" target="_blank">
+            <h4><a href="http://maps.google.com/?q=<%= encodeURIComponent(addressString.replace(/\n/g, " ")) %>" target="_blank">
                 <% for(var i = 0; i < addressArray.length; i++) { %>
                     <%= addressArray[i] %><br>
                 <% } %>
@@ -90,7 +90,7 @@
 
         <div class="col-sm-3">
             <a href="<%= images[i] %>" class="thumbnail" data-lightbox="image-1">
-                 <img src="<%= images[i] %>" class="img-responsive">
+                 <img src="<%= images[i] %>" class="img-responsive" alt="Instagram photo">
             </a>
         </div>
 
