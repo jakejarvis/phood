@@ -24,7 +24,10 @@ function init() {
         }
     }
 
-    
+    // only do this if we're displaying the phone number input box on the page
+    if($('#phonenumber').length) {
+        $("#phonenumber").mask("(999) 999-9999");
+    }
 }
 
 function renderMap() {

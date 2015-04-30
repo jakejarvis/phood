@@ -12,12 +12,12 @@
         <div class="col-md-6" id="textform">
             <form action="sendSMS" method="post" class="form-inline">
                 <input type="text"
-                    placeholder="Enter your phone number (ex: 1234567890)"
-                    pattern=".{10,10}"
+                    placeholder="Enter your phone number (ex: (617) 555-5678)"
                     required
-                    size=35
+                    size="35"
                     name="phonenumber"
-                     class="form-control"/>
+                    id="phonenumber"
+                    class="form-control"/>
                 <input type="hidden" name="name" value="<%= name %>"/>
                 <input type="hidden" name="address" value="<%= address %>"/>
                 <input type="submit" value="Text me this address!" onclick="send_SMS();" class="btn btn-success">
