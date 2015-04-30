@@ -39,6 +39,14 @@ div#container-restaurant h1 {
     margin: 0px;
 }
 
+div#container-restaurant h1 a {
+    color: #2D7C76;
+}
+
+div#container-restaurant h4 a {
+    color: #666;
+}
+
 div#restaurantinfo {
     margin-top: 10px;
     margin-bottom: 10px;
