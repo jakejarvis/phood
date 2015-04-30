@@ -26,6 +26,7 @@ module.exports = {
 			}, function(err, sms) {
 				if(err) {
 					console.log("SOMETHING WENT WRONG :(");
+						console.log(err);
 				} else {
 					res.status(205);
 					res.send();
