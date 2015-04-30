@@ -1,8 +1,22 @@
 <% include ../templates/header %>
 
+<script>
+    	function getFavorites() {
+    		for(key in localStorage) {
+    			var data = JSON.parse(localStorage[key]);
+    			$(#favoriteList).prepend('<p><a href="' + data.link + '">' + data.name + '</a></p>');
+    		}
+    	}
+
+
+
+</script>
+
 <div class="container-fluid">
-    
+    <div id='favoriteList'>
+    </div>
     <p>sup guys</p>
+    <p> yo </p>
 
 </div>
 

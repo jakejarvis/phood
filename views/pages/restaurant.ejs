@@ -17,13 +17,13 @@
 
             <script type="text/javascript">
                 function toggleFavorites(name) {
-                    key = name;
+                    key = window.location.href;
                     // check if in local storage
-                    if (localStorage.getItem(name) === null) {
+                    if (localStorage.getItem(key) === null) {
                         // not in local storage, so add
                         to_store = {
                             'name' : name,
-                            'link' : window.location.href
+                            'link' : key
                         };
                         localStorage[key] = JSON.stringify(to_store);
                         $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
@@ -36,7 +36,24 @@
                     $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
 
                 }
-                </script>
+
+            </script>
+
+            <script>
+                    key = window.location.href;
+                    console.log('onload');
+                    if (localStorage.getItem(key) === null) {
+                        // not in local storage, so stay empty
+                        console.log('not in storage');
+                    } else {
+                        $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
+                        console.log('in storage');
+                    }
+                
+
+
+
+            </script>
 
 
 
