@@ -89,6 +89,7 @@ module.exports = {
                                         }
 
                                         res.render('pages/restaurant', {
+                                            title: name,
                                             name: name,
                                             id: id,
                                             addressString: addressString,
