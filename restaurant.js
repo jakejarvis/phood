@@ -1,27 +1,9 @@
 module.exports = {
     execute: function(app, http) {
-
-
         // restaurant page 
         app.get('/restaurant', function(req, res) {
 
-
-
             foursquareid = req.query.id; // get id parameter from url (/restaurant?id=xxxxxxx)
-            ///name = req.query.name;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             var options = {
                 host: 'api.instagram.com',
@@ -41,8 +23,6 @@ module.exports = {
                     var jsonString = JSON.stringify(eval("(" + str + ")"));
                     var jsonData = JSON.parse(jsonString);
                     var id = jsonData.data[0].id;
-
-
 
                     var instaOptions = {
                         host: 'api.instagram.com',
@@ -74,9 +54,6 @@ module.exports = {
                             }
 
 
-
-
-
                             var foursquareOptions = {
                                 host: 'api.foursquare.com',
                                 path: '/v2/venues/' + foursquareid + '?client_id=AHETXZDGE5YWYLLM5AR13UTWC3UXETSPE54UHAOVRNPJLXIT&client_secret=SCLHL3DIHUSWIBWALLQE3TDHMEZUPCPVRV55FEN0WJRBJPU2&v=20150426'
@@ -105,11 +82,6 @@ module.exports = {
                                         address += foursquareData.response.venue.location.formattedAddress[i] + "\n";
                                     }
 
-                                    console.log(address);
-
-
-
-
                                     res.render('pages/restaurant', {
                                         name: name,
                                         id: id,
@@ -120,40 +92,16 @@ module.exports = {
 
                                 });
 
-
-
-
-
-
-
                             }
 
                             http.request(foursquareOptions, foursquareCallback).end();
 
-
-
-
-
-
-
-
-
-
-                          //  console.log(images);
-
-
-
-
-
                         });
                     }
-
-
 
                     http.request(instaOptions, instaCallback).end();
                 });
             }
-
 
             http.request(options, callback).end();
 

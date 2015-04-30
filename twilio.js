@@ -24,8 +24,9 @@ module.exports = {
 			    to: phonenumber,
 			    from: "+12817466310"
 			}, function(err, sms) {
-			    	process.stdout.write(sms.sid);
+
 			});
+			
 			res.status(205);
 			res.send();
 		})
