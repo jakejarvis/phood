@@ -30,12 +30,15 @@ div#map_canvas {
   height: 100vh; /* http://stackoverflow.com/a/16837667 */
 }
 
-div#container-main {
+div.container-fluid {
     margin-top: 70px;
+    padding: 0px;
+}
+
+div#container-main {
 }
 
 div#container-restaurant {
-    margin-top: 70px;
     padding: 20px 40px;
 }
 
@@ -57,12 +60,7 @@ div#restaurantinfo {
 }
 
 div#textform {
-        display:table-cell;
+    display:table-cell;
     vertical-align:middle;
     text-align: right;
-}
-
-
-.container-fluid {
-    padding: 0;
 }

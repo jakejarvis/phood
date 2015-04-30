@@ -40,6 +40,10 @@ restaurant.execute(app, http);
 var twilio = require('./twilio');
 twilio.execute(app);
 
+// favorites module
+var favorites = require('./favorites');
+favorites.execute(app);
+
 
 
 app.listen(process.env.PORT || 3000);
