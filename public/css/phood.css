@@ -31,8 +31,17 @@ a#logo {
 
 a#logo img {
     height: 40px;
-    margin: 15px 10vh;
+    margin: 15px 160px;
 }
+
+
+@media (max-width: 600px) { /* on small screens, display the favorites icon super close to the logo */
+    a#logo img {
+        margin: 15px 20px;
+    }
+}
+
+
 
 a#favorites-link {
     width: 30px;
