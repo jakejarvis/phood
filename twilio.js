@@ -25,8 +25,8 @@ module.exports = {
 			    from: "+12817466310"
 			}, function(err, sms) {
 				if(err) {
-					console.log("SOMETHING WENT WRONG :(");
-						console.log(err);
+					console.log("Something went wrong with Twilio:");
+					console.log(err);
 				} else {
 					res.status(205);
 					res.send();

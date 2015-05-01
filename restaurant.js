@@ -79,8 +79,6 @@ module.exports = {
                                         addressString = "";
                                         addressArray = foursquareData.response.venue.location.formattedAddress;
 
-                                        console.log(foursquareData.response.venue.bestPhoto.prefix + foursquareData.response.venue.bestPhoto.suffix);
-
                                         name = foursquareData.response.venue.name;
                                         url = foursquareData.response.venue.url;
 
