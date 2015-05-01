@@ -45,6 +45,8 @@ UPDATE:
 - Can receive a text message with the restaurant's name and address for help in navigating to a restaurant on-the-go
 - On the page with the restaurant's photos can go to the restaurant's web page (by clicking on the restaurant name) and can click on the address to see that location by itself on Google Maps
 - Clicking on the header brings you back to the homepage
+- The Title of each tab displays the restaurant's name for ease of navigating between multiple restaurant tabs (especially useful for if you opened multiple restaurant pages from the map screen at once to compare food pictures)
+- Displays a carrot in the website tab to indicate that page is from phood.at
 
 ## 5. What data will your prototype be using and collecting?
 
