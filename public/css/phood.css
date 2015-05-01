@@ -113,4 +113,9 @@ div#textform {
 #clearFavoritesButton {
     color: white;
     background-color: #ef8125;
+    margin-top: 20px;
+}
+
+.center {
+    text-align: center;
 }
