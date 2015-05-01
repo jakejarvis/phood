@@ -16,13 +16,34 @@ nav.navbar {
     background-color: #2D7C76;
 }
 
-div.navbar-header, a.navbar-brand {
+div.navbar-header {
     width: 100%;
+    text-align: center;
+    height: 70px;
 }
 
-a.navbar-brand img {
-    height: 40px;
+a#logo {
+    width: 400px;
     margin: 0px auto;
+    height: 70px;
+    display:inline-block;
+}
+
+a#logo img {
+    height: 40px;
+    margin: 15px 100px;
+}
+
+a#favorites-link {
+    width: 30px;
+    height: 70px;
+    display: inline-block;
+    top:0px;
+    position: absolute;
+}
+
+a#favorites-link span {
+    margin-top: 20px;
 }
 
 div#map_canvas {
