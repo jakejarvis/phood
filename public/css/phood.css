@@ -23,15 +23,15 @@ div.navbar-header {
 }
 
 a#logo {
-    width: 400px;
     margin: 0px auto;
+    padding-left: 30px;
     height: 70px;
     display:inline-block;
 }
 
 a#logo img {
     height: 40px;
-    margin: 15px 100px;
+    margin: 15px 10vh;
 }
 
 a#favorites-link {
