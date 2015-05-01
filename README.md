@@ -20,8 +20,8 @@ UPDATE:
 - Use Foursquare to show the restaurants near one's location
 - Get the photos from Instagram that have been geotagged at the restaurant
 - The user can look at the photos from different restaurants to determine where they want to go
-- They can add the restaurants they're interested in to their list of favorites to remember for later
-- Once they decide on a restaurant, they can get a text message with the restaurant's name and address 
+- They can add the restaurants they're interested in to their Carrots list to remember or view later
+- Once they decide on a restaurant, they can elect to get a text message with the restaurant's name and address 
 
 ## 4. List of all the features that your team will implement
 
@@ -32,28 +32,31 @@ UPDATE:
 - Send emails, SMSes, or push notifications
 
 UPDATE:
-- Can see all the restaurants near your current location
+- Can see restaurants near your current location
 - Can mouse over the carrots to see the restaurant name
-- Clicking on the restaurant's name shows the instagram photos from restaurants near your current location
-- Can add the restaurants one's interested in to the list of Carrots to remember and view later by clicking on the star by the restaurant's name
-- When adding restaurants to the Carrots list, the star by the restaurant's name changes yellow and if the restaurant page is revisited at a later time, a yellow star indicates the restaurant is already in the Carrots list.
-- Can remove a restaurant from the Carrots list by clicking the star by the restaurant's name (the star will then have a white filling)
+- Clicking on the restaurant's name shows the Instagram photos from that restaurant
+- Can add the restaurants you're interested in to the list of Carrots by clicking on the star by the restaurant's name
 - Clicking on the star by the PHOOD title brings you to your Carrots page
+- The list of Carrots can be used for restaurants you want to remember and view later 
+- When a restaurant is added to the Carrots list, the star by the restaurant's name changes yellow
+- If the restaurant page is revisited at a later time, a yellow star indicates the restaurant is already in the Carrots list
+- Can remove a restaurant from the Carrots list by clicking the star by the restaurant's name (the star will then change from a yellow to white filling)
+- When the Carrots list is empty there is a link saying "Go find some carrots!" that takes you to the home (map) page
 - When viewing the restaurants in the Carrot list can click on the restaurant's name to view the instagram photos again
 - Can clear the list of "Carrots"
-- Can view the photos by clicking through them one-by-one or viewing them as a grid
+- Can view the photos taken at a restaurant by clicking through them one-by-one or viewing them as a grid
 - Can receive a text message with the restaurant's name and address for help in navigating to a restaurant on-the-go
 - On the page with the restaurant's photos can go to the restaurant's web page (by clicking on the restaurant name) and can click on the address to see that location by itself on Google Maps
-- Clicking on the header brings you back to the homepage
+- Clicking on the PHOOD header brings you back to the homepage
 - The Title of each tab displays the restaurant's name for ease of navigating between multiple restaurant tabs (especially useful for if you opened multiple restaurant pages from the map screen at once to compare food pictures)
-- Displays a carrot in the website tab to indicate that page is from phood.at
+- Displays a carrot in the website tab to indicate it is from phood.at
 
 ## 5. What data will your prototype be using and collecting?
 
 We will be scraping the list of restaurants according to the user’s geolocation from the Yelp API. After we have the restaurant name, we can query the Instagram, Facebook, and Twitter APIs with that location tag to find pictures of food. We can then sort the list of restaurants by distance and popularity, or display the results on a Google Map. Once the user chooses a restaurant, we can give them driving/walking directions to the restaurant from their current location.
 
 UPDATE:
-We scraped the list of restaurants according to the user’s geolocation from the Foursquare API. Using this information we queried the Instagram API to get the photos taken at that location. We also get the restaurant's name and address from the Foursquare API which is displayed on the site. We get the user's phone number when they enter it to receive a text message with the address of the restaurant but do not store it. We collect the names of the restaurants the user has "starred" and show this list on the Carrots page
+We scraped the list of restaurants according to the user’s geolocation from the Foursquare API. Using this information we queried the Instagram API to get the photos taken at that location. We also get the restaurant's name and address from the Foursquare API which is displayed on the site. We get the user's phone number when they enter it to receive a text message with the address of the restaurant but do not store it. We collect and store the names of the restaurants the user has "starred" and display this list on the Carrots page
 
 
 ## 6. Any algorithms or special techniques that will be necessary
@@ -63,7 +66,8 @@ We scraped the list of restaurants according to the user’s geolocation from th
 - Sort photos based on which are posted most recently
 
 UPDATE:
-- In order to get the Instagram photos that are geotagged at a restaurant we had to first use the Foursquare API to generate a list of restaurants and their corresponding Foursquare ids and then use the Instagram API to convert the Foursquare ids to Instagram ids which were thus used to find the photos taken at a restaurant. This was necessary because just giving Instagram the lat and lng coordinates of a restaurant returned all photos taken near that location and yielded nearly no food photos. The Instagram API takes a Foursquare id as a parameter when trying to query for a specific named location.
+- In order to get the Instagram photos that are geotagged at a restaurant we first had to use the Foursquare API to generate a list of restaurants and their corresponding Foursquare ids. Then use the Instagram API to convert the Foursquare ids to Instagram ids which were used to find the photos taken at a restaurant. 
+This was necessary because just giving Instagram the lat and lng coordinates of a restaurant returned all photos taken near that location and yielded nearly no food photos. We attempted to filter the photos returned from a lat and lng pair through hashtags but found that unsuccessful. The Instagram API takes a Foursquare id as a parameter when trying to query for a specific named location so this indicated that an integrated approach was needed.
 - Having the color of the star by the restaurant's name indicate whether that restaurant is in the Carrots list or not even after closing the page and revisiting it later (a yellow star indicates it is, a white star means it is not)
 
 
