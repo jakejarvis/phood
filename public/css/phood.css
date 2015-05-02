@@ -11,6 +11,10 @@ a {
     color: #2D7C76;
 }
 
+button {
+    outline: none !important;
+}
+
 nav.navbar {
     height: 70px;
     background-color: #2D7C76;
