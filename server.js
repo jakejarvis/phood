@@ -18,14 +18,6 @@ app.set('views', path.join(__dirname, 'views/'));
 // use /public for static files like images, CSS, JS
 app.use(express.static(__dirname + '/public'));
 
-// force fake CloudFlare HTTPS
-if(process.env.NODE_ENV === 'production') {
-    var site_url = 'https://phood.at'
-    var force = require('express-force-domain');
-
-    app.all('*', force(site_url));
-}
-
 
 
 // WE HAVE SPLIT UP THE REST OF THE FILE INTO OUR OWN MODULES THAT WE require() AND THEN CALL THEIR execute() FUNCTION
