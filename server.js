@@ -22,13 +22,6 @@ app.use(express.static(__dirname + '/public'));
 // https://docs.newrelic.com/docs/agents/nodejs-agent/supported-features/page-load-timing-nodejs
 app.locals.newrelic = newrelic;
 
-// Mongo initialization and connect to database
-var mongoUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/phood';
-var MongoClient = require('mongodb').MongoClient, format = require('util').format;
-var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
-    db = databaseConnection;
-});
-
 
 
 // WE HAVE SPLIT UP THE REST OF THE FILE INTO OUR OWN MODULES THAT WE require() AND THEN CALL THEIR execute() FUNCTION
