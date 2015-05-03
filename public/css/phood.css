@@ -28,7 +28,7 @@ div.navbar-header {
 
 a#logo {
     margin: 0px auto;
-    padding-left: 30px;
+    margin-left: -30px;
     height: 70px;
     display:inline-block;
 }
@@ -41,7 +41,7 @@ a#logo img {
 
 @media (max-width: 600px) { /* on small screens, display the favorites icon super close to the logo */
     a#logo img {
-        margin: 15px 20px;
+        margin: 15px 20px 15px 50px;
     }
 }
 
