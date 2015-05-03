@@ -1,5 +1,6 @@
 // Initialization
 var express = require('express');
+var newrelic = require('newrelic');
 var bodyParser = require('body-parser');
 var validator = require('validator');
 var path = require('path');
