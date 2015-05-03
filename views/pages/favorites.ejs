@@ -8,7 +8,7 @@
 			if(data.link.indexOf('?') != -1)    // remove favorites using old method (whole URL)
 				localStorage.removeItem(key);
 
-			$("#favoriteList").prepend('<p><img src="/img/favorites_carrot.png"><a href="/restaurant/' + data.link + '">' + data.name + '</a></p>');
+			$("#favoriteList").prepend('<p><img src="/img/favorites_carrot.png"><a href="/restaurant/' + data.link + '/' + slugify(data.name) + '">' + data.name + '</a></p>');
 		}
 		if ($('#favoriteList').is(':empty')) {
 			$("#favoriteList").prepend('<p> <a href="/">Go find some carrots!</a> </p>');
