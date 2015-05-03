@@ -33,7 +33,7 @@ function renderMap() {
     marker = new google.maps.Marker({
         position: me,
         icon: {
-            url: "img/bunny.png",
+            url: "/img/bunny.png",
             size: new google.maps.Size(40, 60),
             origin: new google.maps.Point(0, 0),
             scaledSize: new google.maps.Size(40, 60)
@@ -62,14 +62,14 @@ function createMarker(place) {
         map: gmap,
         title: place.name,
         icon: {
-            url: "img/carrot.png",
+            url: "/img/carrot.png",
             size: new google.maps.Size(24, 60),
             origin: new google.maps.Point(0, 0),
             scaledSize: new google.maps.Size(18, 45)
         }
     });
 
-    var url = "restaurant?id=" + place.id;
+    var url = "/restaurant/" + place.id;
 
     // open pop-up info window (with link to restaurant info) when mouse is over this marker
     google.maps.event.addListener(marker, 'mouseover', function() {

@@ -2,7 +2,8 @@
 
 <script type="text/javascript">
     function toggleFavorites(name) {
-        key = window.location.pathname + window.location.search;
+        key = window.location.href.split("/").pop(); // only store restaurant ID (last part of URL)
+        
         // check if in local storage
         if (localStorage.getItem(key) === null) {
             // not in local storage, so add
@@ -27,7 +28,7 @@
     }
 
     $("document").ready(function() {
-        key = window.location.pathname + window.location.search;
+        key = window.location.href.split("/").pop(); // only store restaurant ID (last part of URL)
         if (localStorage.getItem(key) === null) {
             // not in local storage, so stay empty
         } else {

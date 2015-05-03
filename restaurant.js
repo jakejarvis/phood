@@ -1,9 +1,9 @@
 module.exports = {
     execute: function(app, http) {
         // restaurant page 
-        app.get('/restaurant', function(req, res) {
+        app.get('/restaurant/:id?', function(req, res) {
 
-            foursquareid = req.query.id; // get id parameter from url (/restaurant?id=xxxxxxx)
+            foursquareid = req.query.id || req.params.id; // get id parameter from url (/restaurant?id=xxxxxxx)
 
             var options = {
                 host: 'api.instagram.com',

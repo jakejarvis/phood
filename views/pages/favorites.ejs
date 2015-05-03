@@ -4,7 +4,11 @@
 	$(document).ready(function(){
 		for(key in localStorage) {
 			var data = JSON.parse(localStorage[key]);
-			$("#favoriteList").prepend('<p><img src="/img/favorites_carrot.png"><a href="' + data.link + '">' + data.name + '</a></p>');
+
+			if(data.link.indexOf('?') != -1)    // remove favorites using old method (whole URL)
+				localStorage.removeItem(key);
+
+			$("#favoriteList").prepend('<p><img src="/img/favorites_carrot.png"><a href="/restaurant/' + data.link + '">' + data.name + '</a></p>');
 		}
 		if ($('#favoriteList').is(':empty')) {
 			$("#favoriteList").prepend('<p> <a href="/">Go find some carrots!</a> </p>');
