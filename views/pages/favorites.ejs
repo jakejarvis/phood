@@ -4,7 +4,7 @@
 	$(document).ready(function(){
 		for(key in localStorage) {
 			var data = JSON.parse(localStorage[key]);
-			$("#favoriteList").prepend('<p><img src="img/favorites_carrot.png"><a href="' + data.link + '">' + data.name + '</a></p>');
+			$("#favoriteList").prepend('<p><img src="/img/favorites_carrot.png"><a href="' + data.link + '">' + data.name + '</a></p>');
 		}
 		if ($('#favoriteList').is(':empty')) {
 			$("#favoriteList").prepend('<p> <a href="/">Go find some carrots!</a> </p>');

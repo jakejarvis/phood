@@ -42,13 +42,13 @@
                     <span class="glyphicon glyphicon-star-empty unfavorited"  aria-hidden="true"></span>
                     </button>
             </h1> 
-            <h4><a href="http://maps.google.com/?q=<%= encodeURIComponent(address.replace(/\n/g, " ")) %>" target="_blank">
+            <h4><a href="https://maps.google.com/?q=<%= encodeURIComponent(address.replace(/\n/g, " ")) %>" target="_blank">
             <%- address.replace(/\n/g, "<br>") %>
             </a></h4>
         </div>
 
         <div class="col-md-6" id="textform">
-            <form action="sendSMS" method="post" class="form-inline">
+            <form action="/sendSMS" method="post" class="form-inline">
                 <input type="text"
                     placeholder="Enter your phone number."
                     required
