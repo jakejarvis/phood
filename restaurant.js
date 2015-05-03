@@ -1,7 +1,7 @@
 module.exports = {
     execute: function(app, http) {
         // restaurant page 
-        app.get('/restaurant/:id?', function(req, res) {
+        app.get('/restaurant/:id?/:nothing?', function(req, res) {
 
             if(req.query.id) {
                 res.redirect('/restaurant/' + req.query.id);    // redirect old URL (/restaurant?id=xxxx) to new URL (/restaurant/xxxx)

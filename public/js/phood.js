@@ -69,7 +69,7 @@ function createMarker(place) {
         }
     });
 
-    var url = "/restaurant/" + place.id;
+    var url = "/restaurant/" + place.id + "/" + slugify(place.name);
 
     // open pop-up info window (with link to restaurant info) when mouse is over this marker
     google.maps.event.addListener(marker, 'mouseover', function() {
@@ -77,4 +77,9 @@ function createMarker(place) {
         infoWindow.setContent('<a href="' + url + '">' + place.name + '</a>');
         infoWindow.open(gmap, this);
     });
+}
+
+// https://github.com/stipsan/String.Slugify.js/blob/master/Source/String.Slugify.js
+function slugify(name) {
+    return name.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
 }
