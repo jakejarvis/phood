@@ -2,7 +2,7 @@
 
 <script type="text/javascript">
     function toggleFavorites(name) {
-        key = window.location.href;
+        key = window.location.pathname + window.location.search;
         // check if in local storage
         if (localStorage.getItem(key) === null) {
             // not in local storage, so add
@@ -26,7 +26,7 @@
         return true;
     }
 
-    key = window.location.href;
+    key = window.location.pathname + window.location.search;
     if (localStorage.getItem(key) === null) {
         // not in local storage, so stay empty
     } else {
