@@ -18,9 +18,13 @@ app.set('views', path.join(__dirname, 'views/'));
 // use /public for static files like images, CSS, JS
 app.use(express.static(__dirname + '/public'));
 
-// in express, this lets you call newrelic from within a template
-// https://docs.newrelic.com/docs/agents/nodejs-agent/supported-features/page-load-timing-nodejs
-app.locals.newrelic = newrelic;
+// force fake CloudFlare HTTPS
+if(app.get('env') != "development") {
+    var site_url = 'https://phood.at'
+    var force = require('express-force-domain');
+
+    app.all('*', force(site_url));
+}
 
 
 
