@@ -19,7 +19,7 @@ app.set('views', path.join(__dirname, 'views/'));
 app.use(express.static(__dirname + '/public'));
 
 // force fake CloudFlare HTTPS
-if(app.get('env') != "development") {
+if(process.env.NODE_ENV === 'production') {
     var site_url = 'https://phood.at'
     var force = require('express-force-domain');
 
