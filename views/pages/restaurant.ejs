@@ -1,9 +1,9 @@
 <% include ../templates/header %>
 
 <script type="text/javascript">
-    function toggleFavorites(name, id) {
-        key = id; // only store restaurant ID (last part of URL)
+    var id4SQ = "<%= id4SQ %>";
 
+    function toggleFavorites(name, key) {
         // check if in local storage
         if (localStorage.getItem(key) === null) {
             // not in local storage, so add
@@ -28,6 +28,7 @@
     }
 
     $("document").ready(function() {
+        console.log(id4SQ);
         key = id4SQ; // only store restaurant ID (last part of URL)
         if (localStorage.getItem(key) === null) {
             // not in local storage, so stay empty
