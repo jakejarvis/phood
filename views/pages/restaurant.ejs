@@ -40,13 +40,10 @@
 
             <script>
                     key = window.location.href;
-                    console.log('onload');
                     if (localStorage.getItem(key) === null) {
                         // not in local storage, so stay empty
-                        console.log('not in storage');
                     } else {
                         $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty unfavorited').toggleClass('glyphicon-star favorited');
-                        console.log('in storage');
                     }
                 
 
