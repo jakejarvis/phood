@@ -18,6 +18,10 @@ app.set('views', path.join(__dirname, 'views/'));
 // use /public for static files like images, CSS, JS
 app.use(express.static(__dirname + '/public'));
 
+// in express, this lets you call newrelic from within a template
+// https://docs.newrelic.com/docs/agents/nodejs-agent/supported-features/page-load-timing-nodejs
+app.locals.newrelic = newrelic;
+
 // Mongo initialization and connect to database
 var mongoUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/phood';
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
