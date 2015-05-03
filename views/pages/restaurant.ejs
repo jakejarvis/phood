@@ -1,8 +1,40 @@
 <% include ../templates/header %>
 
+<script type="text/javascript">
+    function toggleFavorites(name) {
+        key = window.location.href;
+        // check if in local storage
+        if (localStorage.getItem(key) === null) {
+            // not in local storage, so add
+            to_store = {
+                'name' : name,
+                'link' : key
+            };
+            localStorage[key] = JSON.stringify(to_store);
+            $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty unfavorited').toggleClass('glyphicon-star favorited');
+
+            // toggle the star
+            return;
+        }
+        // is in local storage, so remove
+        localStorage.removeItem(key);
+        $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty unfavorited').toggleClass('glyphicon-star favorited');
+    }
+
+    function send_SMS(number) {
+        alert("A message is on its way!");
+        return true;
+    }
+
+    key = window.location.href;
+    if (localStorage.getItem(key) === null) {
+        // not in local storage, so stay empty
+    } else {
+        $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty unfavorited').toggleClass('glyphicon-star favorited');
+    }
+</script>
 
 <div class="container-fluid" id="container-restaurant">
-    
     <div class="row" id="restaurantinfo">
         <div class="col-md-6">
             <h1><a href="<%= url %>" target="_blank"><%= name %></a>
@@ -13,46 +45,6 @@
             <h4><a href="http://maps.google.com/?q=<%= encodeURIComponent(address.replace(/\n/g, " ")) %>" target="_blank">
             <%- address.replace(/\n/g, "<br>") %>
             </a></h4>
-
-            <script type="text/javascript">
-                function toggleFavorites(name) {
-                    key = window.location.href;
-                    // check if in local storage
-                    if (localStorage.getItem(key) === null) {
-                        // not in local storage, so add
-                        to_store = {
-                            'name' : name,
-                            'link' : key
-                        };
-                        localStorage[key] = JSON.stringify(to_store);
-                        $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty unfavorited').toggleClass('glyphicon-star favorited');
-
-                        // toggle the star
-                        return;
-                    }
-                    // is in local storage, so remove
-                    localStorage.removeItem(key);
-                    $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty unfavorited').toggleClass('glyphicon-star favorited');
-
-                }
-
-            </script>
-
-            <script>
-                    key = window.location.href;
-                    if (localStorage.getItem(key) === null) {
-                        // not in local storage, so stay empty
-                    } else {
-                        $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty unfavorited').toggleClass('glyphicon-star favorited');
-                    }
-                
-
-
-
-            </script>
-
-
-
         </div>
 
         <div class="col-md-6" id="textform">
@@ -69,31 +61,16 @@
                 <input type="submit" value="Text me this address!" onclick="send_SMS();" class="btn btn-success">
             </form>
         </div>
-
     </div>
 
     <div class="row">
-
-    <script type="text/javascript">
-        function send_SMS(number) {
-            alert("A message is on its way!");
-            return true;
-    }
-</script>
-
 <% for(var i = 0; i < images.length; i++) { %>
-
         <div class="col-sm-3">
             <a href="<%= images[i] %>" class="thumbnail" data-lightbox="image-1">
                  <img src="<%= images[i] %>" class="img-responsive" alt="Instagram photo">
             </a>
         </div>
-
-
 <% } %>
-
-
-
     </div>
 </div>
 
