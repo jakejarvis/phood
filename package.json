@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "dependencies": {
     "body-parser": "latest",
+    "ejs": "^1.0.0",
     "express": "latest",
     "mongodb": "latest",
-    "validator": "latest",
+    "newrelic": "^1.18.5",
     "twilio": "latest",
-    "yelp": "^0.2.0",
-    "ejs": "^1.0.0"
+    "validator": "latest",
+    "yelp": "^0.2.0"
   }
 }
