@@ -1,9 +1,9 @@
 <% include ../templates/header %>
 
 <script type="text/javascript">
-    function toggleFavorites(name) {
-        key = window.location.href.split("/").pop(); // only store restaurant ID (last part of URL)
-        
+    function toggleFavorites(name, id) {
+        key = id; // only store restaurant ID (last part of URL)
+
         // check if in local storage
         if (localStorage.getItem(key) === null) {
             // not in local storage, so add
@@ -28,7 +28,7 @@
     }
 
     $("document").ready(function() {
-        key = window.location.href.split("/").pop(); // only store restaurant ID (last part of URL)
+        key = id4SQ; // only store restaurant ID (last part of URL)
         if (localStorage.getItem(key) === null) {
             // not in local storage, so stay empty
         } else {
@@ -43,7 +43,7 @@
     <div class="row" id="restaurantinfo">
         <div class="col-md-6">
             <h1><a href="<%= url %>" target="_blank"><%= name %></a>
-                <button type="button" class="btn btn-link" id='favoriteStar' onclick='toggleFavorites("<%= name %>")'>
+                <button type="button" class="btn btn-link" id='favoriteStar' onclick='toggleFavorites("<%= name %>", "<%= id4SQ %>")'>
                     <span class="glyphicon glyphicon-star-empty unfavorited"  aria-hidden="true"></span>
                     </button>
             </h1> 

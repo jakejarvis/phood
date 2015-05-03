@@ -1,13 +1,13 @@
 module.exports = {
     execute: function(app, http) {
         // restaurant page 
-        app.get('/restaurant/:id?/:nothing?', function(req, res) {
+        app.get('/restaurant/:id?/:name?', function(req, res) {
 
             if(req.query.id) {
                 res.redirect('/restaurant/' + req.query.id);    // redirect old URL (/restaurant?id=xxxx) to new URL (/restaurant/xxxx)
             } else {
 
-                foursquareid = req.query.id || req.params.id; // get id parameter from url (/restaurant?id=xxxxxxx)
+                foursquareid = req.params.id; // get id parameter from url (/restaurant?id=xxxxxxx)
 
                 var options = {
                     host: 'api.instagram.com',
@@ -93,6 +93,7 @@ module.exports = {
                                                 title: name,
                                                 name: name,
                                                 id: id,
+                                                id4SQ: req.params.id,
                                                 address: address,
                                                 url: url,
                                                 images: images
