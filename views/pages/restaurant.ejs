@@ -10,10 +10,8 @@
                     <span class="glyphicon glyphicon-star-empty unfavorited"  aria-hidden="true"></span>
                     </button>
             </h1> 
-            <h4><a href="http://maps.google.com/?q=<%= encodeURIComponent(addressString.replace(/\n/g, " ")) %>" target="_blank">
-                <% for(var i = 0; i < addressArray.length; i++) { %>
-                    <%= addressArray[i] %><br>
-                <% } %>
+            <h4><a href="http://maps.google.com/?q=<%= encodeURIComponent(address.replace(/\n/g, " ")) %>" target="_blank">
+            <%- address.replace(/\n/g, "<br>") %>
             </a></h4>
 
             <script type="text/javascript">
@@ -70,7 +68,7 @@
                     id="phonenumber"
                     class="form-control"/>
                 <input type="hidden" name="name" value="<%= name %>"/>
-                <input type="hidden" name="address" value="<%= addressString %>"/>
+                <input type="hidden" name="address" value="<%= address %>"/>
                 <input type="submit" value="Text me this address!" onclick="send_SMS();" class="btn btn-success">
             </form>
         </div>

@@ -76,22 +76,20 @@ module.exports = {
                                         var foursquareString = JSON.stringify(eval("(" + str + ")"));
                                         var foursquareData = JSON.parse(foursquareString);
 
-                                        addressString = "";
-                                        addressArray = foursquareData.response.venue.location.formattedAddress;
+                                        address = "";
 
                                         name = foursquareData.response.venue.name;
                                         url = foursquareData.response.venue.url;
 
-                                        for(var i = 0; i < addressArray.length; i++) {
-                                            addressString += addressArray[i] + "\n";
+                                        for(var i = 0; i < foursquareData.response.venue.location.formattedAddress.length; i++) {
+                                            address += foursquareData.response.venue.location.formattedAddress[i] + "\n";
                                         }
 
                                         res.render('pages/restaurant', {
                                             title: name,
                                             name: name,
                                             id: id,
-                                            addressString: addressString,
-                                            addressArray: addressArray,
+                                            address: address,
                                             url: url,
                                             images: images
                                         });
