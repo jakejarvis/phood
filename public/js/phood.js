@@ -3,7 +3,6 @@ var myLng;
 var infoWindow = new google.maps.InfoWindow;
 
 function init() {
-
     // only do this if we're displaying a map (#map_canvas) on the page
     if($('#map_canvas').length) {
         var map_canvas = document.getElementById("map_canvas");
@@ -22,11 +21,6 @@ function init() {
         } else {
             alert("Please try a different browser.");
         }
-    }
-
-    // only do this if we're displaying the phone number input box on the page
-    if($('#phonenumber').length) {
-        $("#phonenumber").mask("(999) 999-9999");
     }
 }
 

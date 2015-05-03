@@ -26,12 +26,16 @@
         return true;
     }
 
-    key = window.location.pathname + window.location.search;
-    if (localStorage.getItem(key) === null) {
-        // not in local storage, so stay empty
-    } else {
-        $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty unfavorited').toggleClass('glyphicon-star favorited');
-    }
+    $("document").ready(function() {
+        key = window.location.pathname + window.location.search;
+        if (localStorage.getItem(key) === null) {
+            // not in local storage, so stay empty
+        } else {
+            $('#favoriteStar').find('span').toggleClass('glyphicon-star-empty unfavorited').toggleClass('glyphicon-star favorited');
+        }
+
+        $("#phonenumber").mask("(999) 999-9999");
+    });
 </script>
 
 <div class="container-fluid" id="container-restaurant">
