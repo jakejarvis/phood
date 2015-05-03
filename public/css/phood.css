@@ -65,7 +65,7 @@ div#map_canvas {
 }
 
 div.container-fluid {
-    margin-top: 70px;
+    top: 70px;
     padding: 0px;
 }
 
@@ -86,6 +86,16 @@ div#container-restaurant h1 a {
 
 div#container-restaurant h4 a {
     color: #666;
+}
+
+div#container-restaurant, div#container-favorites {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+}
+
+div#container-favorites div.row {
+    width: 100%;
 }
 
 div#restaurantinfo {
