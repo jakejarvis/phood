@@ -1,6 +1,8 @@
 var myLat;
 var myLng;
+var gmap;
 var infoWindow = new google.maps.InfoWindow;
+var bounds = new google.maps.LatLngBounds();
 
 function init() {
     // only do this if we're displaying a map (#map_canvas) on the page
@@ -51,6 +53,9 @@ function foursquare() {
         for(var i = 0; i < data.response.venues.length; i++) {
             createMarker(data.response.venues[i]);
         }
+
+        gmap.fitBounds(bounds);  // zoom out to show all carrots
+        gmap.setZoom(gmap.getZoom() + 1);  // zoom back in a little
     });
 }
 
@@ -70,6 +75,8 @@ function createMarker(place) {
             scaledSize: new google.maps.Size(18, 45)
         }
     });
+
+    bounds.extend(marker.getPosition());
 
     var url = "/restaurant/" + place.id + "/" + slugify(place.name);
 
