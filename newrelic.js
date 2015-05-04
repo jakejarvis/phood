@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['phood2015'],
+  app_name: ['phoodat'],
   /**
    * Your New Relic license key.
    */
