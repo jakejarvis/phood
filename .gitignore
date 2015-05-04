@@ -28,3 +28,6 @@ Icon?
 thumbs.db
 Thumbs.db
 *~
+
+
+newrelic_agent.log
