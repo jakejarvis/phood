@@ -25,6 +25,8 @@ function init() {
 }
 
 function renderMap() {
+    $('#loading').hide();
+
     me = new google.maps.LatLng(myLat, myLng);
 
     // re-center map once we get the user's location
