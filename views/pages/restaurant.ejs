@@ -72,8 +72,8 @@
     <div class="row">
 <% for(var i = 0; i < images.length; i++) { %>
         <div class="col-sm-3">
-            <a href="<%= images[i] %>" class="thumbnail" data-lightbox="image-1">
-                 <img src="<%= images[i] %>" class="img-responsive" alt="Instagram photo">
+            <a href="<%= images[i]['imageURL'] %>" class="thumbnail" data-lightbox="grams" data-title="@<%= images[i]['username'] %>: <%= images[i]['caption'] %> <%= images[i]['link'] %> <%= images[i]['time'] %>">
+                 <img src="<%= images[i]['imageURL'] %>" class="img-responsive" alt="Instagram photo">
             </a>
         </div>
 <% } %>

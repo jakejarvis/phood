@@ -54,9 +54,15 @@ module.exports = {
 
                                     for (var i = 0; i < instaData.data.length; i++) {
                                         if (instaData.data[i].type == "image") {
-                                            var imageURL = instaData.data[i].images.standard_resolution.url;
+                                            var instaPhoto = [];
 
-                                            images.push(imageURL);
+                                            instaPhoto['caption'] = instaData.data[i].caption.text;
+                                            instaPhoto['imageURL'] = instaData.data[i].images.standard_resolution.url;
+                                            instaPhoto['link'] = instaData.data[i].link;
+                                            instaPhoto['username'] = instaData.data[i].user.username;
+                                            instaPhoto['time'] = instaData.data[i].caption.created_time;
+
+                                            images.push(instaPhoto);
                                         }
                                     }
 
