@@ -15,6 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views/'));
 
+app.use('/public/', function(req, res, next) {
+        req.url = req.url.replace(/\/([^\/]+)\.[0-9a-f]+\.(css|js|jpg|png|gif|svg)$/, "/$1.$2");
+        next();
+});
+
 // use /public for static files like images, CSS, JS
 app.use(express.static(__dirname + '/public'));
 
