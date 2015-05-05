@@ -1,17 +1,11 @@
 html, body {
     height: 100%;
-}
-
-body {
-    font-family: "Clear Sans", sans-serif;
-    font-size: 15px;
     background-color: #eff5f4;
 }
 
-a {
-    color: #2D7C76;
+body, .gm-style, .gm-style-iw {      /* .gm-style & .gm-style-iw needed to override Google overlords who want us to use their Roboto font */
+    font-family: "Clear Sans", sans-serif !important;;
 }
-
 
 a {
     color: #2D7C76;
@@ -120,7 +114,7 @@ div#container-restaurant h1 a {
 
 div#container-restaurant h4 {
     font-weight: normal;
-
+    
 }
 div#container-restaurant h4 a {
     color: #666;
