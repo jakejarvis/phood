@@ -18,7 +18,8 @@ app.set('views', path.join(__dirname, 'views/'));
 // use /public for static files like images, CSS, JS
 app.use(express.static(__dirname + '/public'));
 
-
+// allows placement of dynamic New Relic Browser JS in header
+app.locals.newrelic = newrelic;
 
 // WE HAVE SPLIT UP THE REST OF THE FILE INTO OUR OWN MODULES THAT WE require() AND THEN CALL THEIR execute() FUNCTION
 
