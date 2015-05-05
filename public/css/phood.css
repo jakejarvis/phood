@@ -19,6 +19,7 @@ button {
 nav.navbar {
     height: 70px;
     background-color: #2D7C76;
+    background-image: linear-gradient(to bottom, #2D7C76 0, #20615c 100%);
 }
 
 div.navbar-header {
