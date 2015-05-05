@@ -56,12 +56,12 @@ module.exports = {
                                         if (instaData.data[i].type == "image") {
                                             var instaPhoto = [];
 
-                                       //     if(instaData.data[i].caption)
-                                         //       instaPhoto['caption'] = instaData.data[i].caption.text;
+                                            if(instaData.data[i].caption)
+                                                instaPhoto['caption'] = instaData.data[i].caption.text;
                                             instaPhoto['imageURL'] = instaData.data[i].images.standard_resolution.url;
                                             instaPhoto['link'] = instaData.data[i].link;
                                             instaPhoto['username'] = instaData.data[i].user.username;
-                                  //          instaPhoto['time'] = instaData.data[i].caption.created_time;
+                                            instaPhoto['time'] = instaData.data[i].created_time;
 
                                             images.push(instaPhoto);
                                         }
