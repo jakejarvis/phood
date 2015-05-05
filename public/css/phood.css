@@ -18,11 +18,11 @@ button {
 
 nav.navbar {
     height: 70px;
-    background-color: #2D7C76;
-    background: -webkit-linear-gradient(#2D7C76, #246964; /* For Safari 5.1 to 6.0 */
+    background: #2D7C76; /* Fallback flat color */
+    background: -webkit-linear-gradient(#2D7C76, #246964); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#2D7C76, #246964); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#2D7C76, #246964); /* For Firefox 3.6 to 15 */
-    background-image: linear-gradient(#2D7C76, #246964);
+    background: linear-gradient(#2D7C76, #246964);
 }
 
 div.navbar-header {
