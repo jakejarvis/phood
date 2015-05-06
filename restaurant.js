@@ -92,6 +92,8 @@ module.exports = {
                                             name = foursquareData.response.venue.name;
                                             url = foursquareData.response.venue.url;
 
+                                            foursquare_id = req.params.id;
+
                                             for(var i = 0; i < foursquareData.response.venue.location.formattedAddress.length; i++) {
                                                 address += foursquareData.response.venue.location.formattedAddress[i] + "\n";
                                             }
@@ -100,7 +102,7 @@ module.exports = {
                                                 title: name,
                                                 name: name,
                                                 id: id,
-                                                id4SQ: req.params.id,
+                                                foursquare_id: foursquare_id,
                                                 address: address,
                                                 url: url,
                                                 images: images
@@ -132,5 +134,9 @@ module.exports = {
 
         });
 
+
+        function slugify(name) {
+            return name.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
+        }
     }
 }

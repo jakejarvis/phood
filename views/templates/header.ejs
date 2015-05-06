@@ -1,15 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
     <head>
         <title><% if(typeof(title) != "undefined") { %><%= title %> | <% } %>Phood</title>
 
         <meta charset="utf-8">
 
+        <!-- New Relic monitoring -->
+        <%- newrelic.getBrowserTimingHeader() %>
+
         <!-- Disable mobile touch zooming -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-        <!-- New Relic monitoring -->
-        <%- newrelic.getBrowserTimingHeader() %>
+        <!-- Meta tags -->
+        <meta name="description" content="Photos of nearby phood taken by real customers.">
+
+        <!-- Social tags -->
+        <meta property="og:title" content="<% if(typeof(title) != "undefined") { %><%= title %> | <% } %>Phood">
+        <meta property="og:site_name" content="Phood">
+        <meta property="og:url" content="<%= current_url %>">
+        <meta property="og:image" content="<%= root_url %>/img/logo-green.jpg">
+        <meta property="og:type" content="website">
+
         
         <!-- Styles -->
         <link href="/css/clear-sans.css" rel="stylesheet">
