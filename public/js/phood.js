@@ -60,6 +60,8 @@ function foursquare() {
 }
 
 function createMarker(place) {
+console.log(place);
+
     var lat = place.location.lat;
     var lng = place.location.lng;
 

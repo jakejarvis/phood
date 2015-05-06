@@ -139,6 +139,10 @@ div#restaurantinfo h1 {
     font-weight: bold;
 }
 
+div#restaurantinfo a#menu {
+    margin-top: 10px;
+}
+
 div#textform {
     display:table-cell;
     vertical-align:middle;

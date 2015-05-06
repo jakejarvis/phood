@@ -94,6 +94,10 @@ module.exports = {
 
                                             foursquare_id = req.params.id;
                                             foursquare_image = foursquareData.response.venue.bestPhoto.prefix + '640x640' + foursquareData.response.venue.bestPhoto.suffix;
+//console.log(foursquareData.response.venue.menu.url);
+                                            foursquare_menu = null;
+                                            if(foursquareData.response.venue.hasMenu)
+                                                foursquare_menu = foursquareData.response.venue.menu.url;
 
                                             for(var i = 0; i < foursquareData.response.venue.location.formattedAddress.length; i++) {
                                                 address += foursquareData.response.venue.location.formattedAddress[i] + "\n";
@@ -105,6 +109,7 @@ module.exports = {
                                                 id: id,
                                                 foursquare_id: foursquare_id,
                                                 foursquare_image: foursquare_image,
+                                                foursquare_menu: foursquare_menu,
                                                 address: address,
                                                 url: url,
                                                 images: images

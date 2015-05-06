@@ -46,7 +46,7 @@
             <h1><a href="<%= url %>" target="_blank"><%= name %></a>
                 <button type="button" class="btn btn-link" id='favoriteStar' onclick='toggleFavorites("<%= name %>", "<%= foursquare_id %>")'>
                     <span class="glyphicon glyphicon-star-empty unfavorited"  aria-hidden="true"></span>
-                    </button>
+                </button>
             </h1> 
             <h4><a href="https://maps.google.com/?q=<%= encodeURIComponent(address.replace(/\n/g, " ")) %>" target="_blank">
             <%- address.replace(/\n/g, "<br>") %>
@@ -66,6 +66,10 @@
                 <input type="hidden" name="address" value="<%= address %>"/>
                 <input type="submit" value="Text me this address!" onclick="send_SMS();" class="btn btn-success">
             </form>
+
+            <% if(foursquare_menu) { %>
+                <a class="btn btn-default" id="menu" href="<%= foursquare_menu %>" target="_blank" role="button">Menu</a>
+            <% } %>
         </div>
     </div>
 
