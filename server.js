@@ -22,6 +22,15 @@ app.use(express.static(__dirname + '/public'));
 app.locals.newrelic = newrelic;
 
 
+// HTTP security headers: https://www.dionach.com/blog/an-overview-of-http-security-headers
+app.use(function(req, res, next) {
+    res.header('x-xss-protection', '1; mode=block')
+    res.header('x-content-type-options', 'nosniff');
+    res.header('x-frame-options', 'SAMEORIGIN');
+    res.header('x-ua-compatible', 'IE=Edge,chrome=1'); // https://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible
+    next(); // http://expressjs.com/guide/using-middleware.html#middleware.application
+});
+
 // Disable the Powered By Express header for security reasons
 app.set('x-powered-by', false);
 
