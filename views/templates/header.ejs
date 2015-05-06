@@ -17,9 +17,17 @@
         <!-- Open graph tags -->
         <meta property="og:title" content="<% if(typeof(title) != "undefined") { %><%= title %> | <% } %>Phood">
         <meta property="og:site_name" content="Phood">
+        <meta property="og:description" content="Photos of nearby phood taken by real customers.">
         <meta property="og:url" content="<%= current_url %>">
         <meta property="og:image" content="<% if(typeof(foursquare_image) != "undefined") { %><%= foursquare_image %><% } else { %><%= root_url %>/img/logo-green.jpg<% } %>">
         <meta property="og:type" content="website">
+
+        <!-- Twitter tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@phoodat">
+        <meta name="twitter:title" content="<% if(typeof(title) != "undefined") { %><%= title %> | <% } %>Phood">
+        <meta name="twitter:description" content="Photos of nearby phood taken by real customers.">
+        <meta name="twitter:image" content="<% if(typeof(foursquare_image) != "undefined") { %><%= foursquare_image %><% } else { %><%= root_url %>/img/logo-green.jpg<% } %>">
         
         <!-- Styles -->
         <link href="/css/clear-sans.css" rel="stylesheet">
