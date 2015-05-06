@@ -21,6 +21,12 @@ app.use(express.static(__dirname + '/public'));
 // allows placement of dynamic New Relic Browser JS in header
 app.locals.newrelic = newrelic;
 
+
+// Disable the Powered By Express header for security reasons
+app.set('x-powered-by', false);
+
+
+
 // WE HAVE SPLIT UP THE REST OF THE FILE INTO OUR OWN MODULES THAT WE require() AND THEN CALL THEIR execute() FUNCTION
 
 // homepage module
