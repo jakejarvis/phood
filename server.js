@@ -1,5 +1,4 @@
 // Initialization
-var newrelic = require('newrelic');
 var express = require('express');
 var bodyParser = require('body-parser');
 var validator = require('validator');
@@ -17,9 +16,6 @@ app.set('views', path.join(__dirname, 'views/'));
 
 // use /public for static files like images, CSS, JS
 app.use(express.static(__dirname + '/public'));
-
-// allows placement of dynamic New Relic Browser JS in header
-app.locals.newrelic = newrelic;
 
 
 

@@ -5,7 +5,6 @@
     "body-parser": "latest",
     "ejs": "^1.0.0",
     "express": "latest",
-    "newrelic": "^1.18.5",
     "twilio": "latest",
     "validator": "latest",
     "yelp": "^0.2.0"
