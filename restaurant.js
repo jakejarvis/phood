@@ -70,7 +70,7 @@ module.exports = {
 
                                     var foursquareOptions = {
                                         host: 'api.foursquare.com',
-                                        path: '/v2/venues/' + foursquareid + '?client_id=AHETXZDGE5YWYLLM5AR13UTWC3UXETSPE54UHAOVRNPJLXIT&client_secret=SCLHL3DIHUSWIBWALLQE3TDHMEZUPCPVRV55FEN0WJRBJPU2&v=20150426'
+                                        path: '/v2/venues/' + foursquareid + '?client_id=JVT3DKUGWSCDWEDWWHLAT4ITX2KVY3KDCBFQLEVNPIQQY2HJ&client_secret=DQAO4DWCBXBUIQ2NRLXI4IWKEP1TDN2CMESWLDKB5X2BCZZT&v=20150426'
                                     };
 
                                     foursquareCallback = function(response) {
