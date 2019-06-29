@@ -27,7 +27,7 @@ module.exports = {
                         var jsonString = JSON.stringify(eval("(" + str + ")"));
                         var jsonData = JSON.parse(jsonString);
 
-                        if(jsonData.data.length) {
+                        if(typeof(jsonData.data) != "undefined" && jsonData.data.length) {
 
                             var id = jsonData.data[0].id;
 
