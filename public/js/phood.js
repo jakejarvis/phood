@@ -49,7 +49,7 @@ function renderMap() {
 }
 
 function foursquare() {
-    $.getJSON('https://api.foursquare.com/v2/venues/search?ll=' + myLat + ',' + myLng + '&categoryId=4d4b7105d754a06374d81259&radius=2000&limit=50&client_id=AHETXZDGE5YWYLLM5AR13UTWC3UXETSPE54UHAOVRNPJLXIT&client_secret=SCLHL3DIHUSWIBWALLQE3TDHMEZUPCPVRV55FEN0WJRBJPU2&v=20150426', {}, function(data) {
+    $.getJSON('https://api.foursquare.com/v2/venues/search?ll=' + myLat + ',' + myLng + '&categoryId=4d4b7105d754a06374d81259&radius=2000&limit=50&client_id=JVT3DKUGWSCDWEDWWHLAT4ITX2KVY3KDCBFQLEVNPIQQY2HJ&client_secret=DQAO4DWCBXBUIQ2NRLXI4IWKEP1TDN2CMESWLDKB5X2BCZZT&v=20150426', {}, function(data) {
         for(var i = 0; i < data.response.venues.length; i++) {
             createMarker(data.response.venues[i]);
         }
