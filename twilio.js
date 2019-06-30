@@ -2,8 +2,8 @@ module.exports = {
 	 
 	execute: function(app) {
 		app.post('/sendSMS', function(req, res) {
-			var accountSid = 'AC030beb99079233764567be1d99b5e372';
-			var authToken = "5d08bb7f44240cabd1b96a73f6f30f1b";
+			var accountSid = process.env.TWILIO_ID;
+			var authToken = process.env.TWILIO_SECRET;
 			var client = require('twilio')(accountSid, authToken);
 
 

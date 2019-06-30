@@ -11,7 +11,7 @@ module.exports = {
 
                 var options = {
                     host: 'api.instagram.com',
-                    path: '/v1/locations/search?foursquare_v2_id=' + foursquareid + '&access_token=1825654502.22880a8.088578a5f9a34067ad37caf165e0ba03'
+                    path: '/v1/locations/search?foursquare_v2_id=' + foursquareid + '&access_token=' + process.env.INSTAGRAM_SECRET
                 };
 
                 callback = function(response) {
@@ -33,7 +33,7 @@ module.exports = {
 
                             var instaOptions = {
                                 host: 'api.instagram.com',
-                                path: '/v1/locations/' + id + '/media/recent?access_token=1825654502.22880a8.088578a5f9a34067ad37caf165e0ba03&count=500'
+                                path: '/v1/locations/' + id + '/media/recent?access_token=' + process.env.INSTAGRAM_SECRET + '&count=500'
                             };
 
                             instaCallback = function(response) {
@@ -70,7 +70,7 @@ module.exports = {
 
                                     var foursquareOptions = {
                                         host: 'api.foursquare.com',
-                                        path: '/v2/venues/' + foursquareid + '?client_id=JVT3DKUGWSCDWEDWWHLAT4ITX2KVY3KDCBFQLEVNPIQQY2HJ&client_secret=DQAO4DWCBXBUIQ2NRLXI4IWKEP1TDN2CMESWLDKB5X2BCZZT&v=20150426'
+                                        path: '/v2/venues/' + foursquareid + '?client_id=' + process.env.FOURSQUARE_ID + '&client_secret=' + process.env.FOURSQUARE_SECRET + '&v=20150426'
                                     };
 
                                     foursquareCallback = function(response) {
