@@ -1,4 +1,4 @@
-# [phood.at](https://phood.at/)
+# [Phood](https://phood.herokuapp.com/)
 
 **Update as of 2018:** Instagram has [deprecated their API](https://developers.facebook.com/blog/post/2018/01/30/instagram-graph-api-updates/), so this app is now pointless — but it was still fun to create and worth preserving! 
 
